@@ -1,8 +1,14 @@
 def calc(s):
     print("s=",s)
-    nums = map(int,s.split('+'))
-    #print('nums=',nums)
-    return sum(nums)
+    if "+" in s:
+
+        nums = map(int,s.split('+'))
+        #print('nums=',nums)
+        return sum(nums)
+    elif "*" in s:
+        nums = map(int,s.split('*'))
+        #print('nums=',nums)
+        return 
 
 
 print(calc("1"))
