@@ -27,6 +27,8 @@ class Binary(Expr):
     def __repr__(self):
         classname = self.__class__.__name__
         return f'{classname}({self.left},{self.right})'
+    def eval(self):
+        pass
 
 
 
@@ -82,3 +84,6 @@ e=Add(1,2)
 assert e.eval()==3
 print(e.eval())
 
+
+e=Add(1,Mul(2,3))
+print(e.eval())
