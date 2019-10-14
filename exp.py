@@ -7,8 +7,22 @@ class Val(object):
         return f'Val({self.value})'
     def eval(self):
         return self.value
+
+
+class Add(object):
+    __slots__ = ['left','right']
+    def __init__(self,left,right):
+        self.left = left
+        self.right = right
+    def eval(self):
+        return self.left.eval() + self.right.eval()
+
     
 
-v = Val(1)
-assert v.eval()==1
+e=Add(Val(1),Val(2))
+assert e.eval()==3
+
+e = Add(Add(Val(1),Val(2)),Val(3))
+assert e.eval()==6
+
 
