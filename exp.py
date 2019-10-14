@@ -54,8 +54,8 @@ assert e.eval() == 4
 class Mul(Expr):
     __slots__ = ['left','right']
     def __init__(self,left,right):
-        self.left = left
-        self.right = right
+        self.left = toExpr(left)
+        self.right = toExpr(right)
     def eval(self):
         return self.left.eval() * self.right.eval()
 
@@ -63,8 +63,8 @@ class Mul(Expr):
 class Sub(Expr):
     __slots__ = ['left','right']
     def __init__(self,left,right):
-        self.left = left
-        self.right = right
+        self.left = toExpr(left)
+        self.right = toExpr(right)
     def eval(self):
         return self.left.eval() - self.right.eval()
 
@@ -73,10 +73,12 @@ class Sub(Expr):
 class Div(Expr):
     __slots__ = ['left','right']
     def __init__(self,left,right):
-        self.left = left
-        self.right = right
+        self.left = toExpr(left)
+        self.right = toExpr(right)
     def eval(self):
         return self.left.eval() // self.right.eval()
 
 e=Add(1,2)
 assert e.eval()==3
+print(e.eval())
+
