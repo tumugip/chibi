@@ -41,7 +41,11 @@ def parse(s:str):
         s1 = s[0:pos]
         s2 = s[pos+1:]
         return Div(parse(s1),parse(s2))
+    if s.find('(') >0:
+        pos = s.rfind('(')
     return Val(int(s))
+
+
     
 
 
