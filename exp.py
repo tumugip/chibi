@@ -84,8 +84,8 @@ class Div(Binary):
 
 e=Add(1,2)
 assert e.eval()==3
-print(e.eval())
+#print(e.eval())
 
 
 e=Add(1,Mul(2,3))
-print(e.eval())
+#print(e.eval())
