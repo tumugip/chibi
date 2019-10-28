@@ -18,7 +18,11 @@ def toExpr(a):
 #assert isinstance(v,Expr)   #==>True
 #assert isinstance(v,Val)    #==>True
 class Binary(Expr):
-   def __repr__(self):
+    __slots__=['left','right']
+    def __init__(self,a,b):
+        self.left = toExpr(a)
+        self.right = toExpr(b)
+    def __repr__(self):
        classname = self.__class__.__name__
        return f'{classname}({self.left},{self.right})'
 class Add(Binary):
