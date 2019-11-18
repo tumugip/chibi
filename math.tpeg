@@ -1,10 +1,11 @@
 
-example Expr 1+2
+example Expr 1+2+3
 
 
 Expr = {
-    Value '+' Value
+    Value ('+' Value)+
     #Add
+    
 }
 
 
