@@ -1,10 +1,10 @@
 
-example Value 123
-example  Zip 123-4567
+example Expr 1+2
 
-Zip = {
-    Value '-' Value
-    #Zip
+
+Expr = {
+    Value '+' Value
+    #Add
 }
 
 
